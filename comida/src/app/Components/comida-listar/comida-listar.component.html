@@ -1,0 +1,23 @@
+
+<div class="col-md-4 mt-4" *ngFor="let comi of comidas">
+    <div class="card text-center">
+
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center ">
+            {{comi.titulo}}
+            <button class="btn btn-danger" (click)="eliminarComida(comi._id)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <img [src]="comi.imagen" alt="card-img-top">
+        <div class="card-body">
+            <p>{{comi.descripcion}}</p>
+            <p>S/.{{comi.precio}}</p>
+            <p>Stock : {{comi.cantidad}}</p>
+            <a class="btn btn-info btn-block" [routerLink]="['/comidas/edit',comi._id]">
+                Editar Comida
+            </a>
+        </div>
+    </div>
+</div>
+
+

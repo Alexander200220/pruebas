@@ -1,0 +1,47 @@
+<div class="col-md-4 offset-md-4">
+  <div class="card">
+    <div class="card-body">
+      <form action="">
+        <div class="form-group mt-2">
+          <input type="text" name="titulo" [(ngModel)]="comida.titulo"  placeholder="Titulo" class="form-control" autofocus>
+        </div>
+        <div class="form-group mt-2">
+          <textarea name="descripcion" [(ngModel)]="comida.descripcion" rows="2" placeholder="Descripcion" class="form-control"></textarea>
+        </div>
+        <div class="form-group mt-2">
+          <input type="number" name="precio" [(ngModel)]="comida.precio" placeholder="Precio" class="form-control" autofocus>
+        </div>
+        <div class="form-group mt-2">
+          <input type="number" name="cantidad" [(ngModel)]="comida.cantidad"   placeholder="Cantidad" class="form-control" autofocus>
+        </div>
+        <div class="form-group mt-2">
+          <input type="url" name="imagen" [(ngModel)]="comida.imagen"  placeholder="Imagen" class="form-control">
+        </div>
+        <button class="btn btn-success btn-block mt-4" (click)="edit ? updateComida() : guardarComida()">
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-body text-center">
+    <div class="card">
+      <img [src]="comida.imagen == '' ? '/assets/no-image.png' : comida.imagen" alt="No Imagen" class="card-img-top">
+      <div class="card-body">
+
+          <h3>{{comida.titulo == '' ? 'Titulo Comida' : comida.titulo}}</h3>
+          <p>{{comida.descripcion == '' ? 'Descripcion Comida' : comida.descripcion}}</p>
+          <div class="d-flex justify-content-evenly">
+              <small >S/. {{comida.precio == 0 ? 'Precio' : comida.precio}} </small>
+              <small  >c/u: {{comida.cantidad == 0 ? 'Cantidad' : comida.cantidad}}</small><br>
+          </div>
+
+      </div>
+      <div class="card-footer">
+          <small>Comidas CRUD </small>
+      </div>
+    </div>
+  </div>
+</div>
