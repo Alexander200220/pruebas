@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const SECRET_KEY = '123456789';
 const authController = {};
-const prubea ={};
+const prubea ={};e3d
 authController.createUser = (req, res, next) => {
     const newUser = {
         name: req.body.name,
